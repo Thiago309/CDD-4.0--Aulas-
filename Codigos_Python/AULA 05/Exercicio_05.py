@@ -16,3 +16,14 @@ while (n != password):
 
 else:
     print("Acesso liberado, seja bem vindo!")
+
+
+    # modo do professor.
+
+secreta = 1234
+senha = input("Informe sua senha: ")
+cont = 1
+
+while senha != secreta:
+    senha = input("Senha errada! Informe sua senha: ")
+    
