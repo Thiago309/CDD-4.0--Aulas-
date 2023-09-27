@@ -1,10 +1,10 @@
-anos = int(input("Informe sua idade (Anos): "))
-meses = int(input("Informe sua idade (Meses): "))
-dias = int(input("Informe sua idade (Dias): "))
+anosIdade = int(input("Informe sua idade (Anos): "))
+mesesIdade = int(input("Informe sua idade (Meses): "))
+diasIdade = int(input("Informe sua idade (Dias): "))
 
-idadedias = anos * 365 + meses * 30 + dias
+idadeDias = diasIdade + 365 * anosIdade + 30 * mesesIdade
 
-print(f"Você viveu {idadedias} dias.")
+print(f"Você têm {idadeDias} dias de vida.")
 
 
 
