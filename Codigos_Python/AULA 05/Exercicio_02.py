@@ -2,7 +2,7 @@ C = 1
 soma = 0
 #media = 0
 
-while C <= 10:
+while C <= 2:
 
     n = float(input(f"Digite o valor {C} desejado: "))
     soma += n

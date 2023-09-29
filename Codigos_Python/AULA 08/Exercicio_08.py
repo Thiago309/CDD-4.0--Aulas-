@@ -12,24 +12,6 @@ media = soma / qtd
 print(f"A sua média é: {media:.2f}")
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # opcao = "s"
 # c = 0
 #
