@@ -9,6 +9,5 @@ for i in range(qtd):
 
 proc = input("Digite o nome do aluno para descobrir sua posição: ")
 for t in range(qtd):
-
     if proc in alunos[t]:
         print(f"O {alunos[t]} se encontra na posição {t}.")
