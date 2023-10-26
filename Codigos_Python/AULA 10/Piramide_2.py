@@ -1,4 +1,4 @@
-from Piramide import *
+from Biblioteca import Piramide
 
 n = int(input("Digite o numero de repetições: "))
-repeticao(n)
+Piramide(n)
