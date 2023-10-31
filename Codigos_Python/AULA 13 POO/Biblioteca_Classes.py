@@ -36,11 +36,12 @@ class Pessoa:
         self.nome = nome
         self.peso = peso
         self.idade = idade
-        self.comedo = False
+        self.comendo = False
         self.dormir = False
         self.falar = False
 
     def comer(self, tipo):
+
         if self.comendo == True:
             print(f"{self.nome} já está comendo {tipo}.")
         else:
