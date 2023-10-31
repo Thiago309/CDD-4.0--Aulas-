@@ -28,5 +28,5 @@ while opc in "sS":
     elif opc == 5:
         C1.offConta()
 
-    
+
     opc = input("Ainda deseja continuar a utilizar nossos serviços (s/n) ?")
