@@ -20,6 +20,7 @@ def SELECT(tabela):
 
     banco.commit()
     meucursor.close()
+    
 def MODIFY(tabela, coluna, tipo):
     print("Você selecionou a opção para modificar os dados contidos na tabela.")
     meucursor = banco.cursor()
@@ -28,6 +29,7 @@ def MODIFY(tabela, coluna, tipo):
     meucursor.execute(sql, data)
     banco.commit()
     meucursor.close()
+
 def InsertInTo(tabela, coluna, dados):
     print("Você selecionou a opção de inserir dados!")
     meucursor = banco.cursor()
@@ -64,5 +66,6 @@ def descTable(tabela):
     print(resultado)
     banco.commit()
     meucursor.close()
+
 def encerrarBD():
     banco.close()
