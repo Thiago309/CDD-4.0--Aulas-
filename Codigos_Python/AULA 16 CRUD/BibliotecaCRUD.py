@@ -8,47 +8,57 @@ banco = mysql.connector.connect(
 )
 print(banco)
 
-def SELECT():
+def SELECT(tabela):
     meucursor = banco.cursor()
-    pesquisa = "select * from alunos;"
-    meucursor.execute(pesquisa)
+    pesquisa = "select * from (%s);"
+    data = (tabela)
+    meucursor.execute(data, pesquisa)
     resultado = meucursor.fetchall()
 
     for e in resultado:
         print(e)
-def MODIFY():
+
+    banco.commit()
+    meucursor.close()
+def MODIFY(tabela, coluna, tipo):
     print("Você selecionou a opção para modificar os dados contidos na tabela.")
     meucursor = banco.cursor()
-    sql = ""
-def InsertInTo(onde, dados):
+    sql = "alter table (%s) modify column (%s) (%s);"
+    data =(tabela, coluna, tipo)
+    meucursor.execute(sql, data)
+    banco.commit()
+    meucursor.close()
+def InsertInTo(tabela, coluna, dados):
     print("Você selecionou a opção de inserir dados!")
     meucursor = banco.cursor()
-    sql = "insert into alunos (%s) values (%s);"
-    data = (onde, dados)
+    sql = "insert into (%s) (%s) values (%s);"
+    data = (tabela, coluna, dados)
     meucursor.execute(sql, data)
     banco.commit()
     meucursor.close()
 
-def DELETE(deletar):
+def DELETE(tabela, deletar):
     print("Você selecionou a opção de deletar dados!")
     meucursor = banco.cursor()
-    sql = "delete from alunos where (matricula);"
-    data = (deletar)
+    sql = "delete from (%s) where (%s);"
+    data = (tabela, deletar)
     meucursor.execute(sql, data)
     banco.commit()
     meucursor.close()
 
-def CREATE(nome, tipo):
+def CREATE(tabela, nome, tipo):
     print("Você selecionou a opção de criar mais uma coluna para a tabelas!")
     meucursor = banco.cursor()
-    sql = "alter table alunos ADD (%s, %s) not null;"
-    data = (nome, tipo)
+    sql = "alter table (%s) ADD (%s) (%s) not null;"
+    data = (tabela, nome, tipo)
     meucursor.execute(sql, data)
     banco.commit()
     meucursor.close()
 
-def descTable():
+def descTable(tabela):
     meucursor = banco.cursor()
-    pesquisa = "desc alunos;"
-    meucursor.execute(pesquisa)
-    print(pesquisa)
+    pesquisa = "desc (%s);"
+    data = (tabela)
+    meucursor.execute(pesquisa, data)
+    resultado = meucursor.fetchall()
+    print(resultado)
