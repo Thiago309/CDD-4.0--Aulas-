@@ -63,4 +63,5 @@ while opc in "sS":
 
     opcMenu = input("Ainda deseja continuar a utilizar nossos serviços (s/n)? ")
 
+encerrarBD()
 print("Data Base desconecting ...")

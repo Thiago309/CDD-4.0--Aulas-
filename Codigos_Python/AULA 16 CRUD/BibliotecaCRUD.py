@@ -62,3 +62,7 @@ def descTable(tabela):
     meucursor.execute(pesquisa, data)
     resultado = meucursor.fetchall()
     print(resultado)
+    banco.commit()
+    meucursor.close()
+def encerrarBD():
+    banco.close()
